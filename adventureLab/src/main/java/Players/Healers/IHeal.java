@@ -1,5 +1,8 @@
 package Players.Healers;
 
+import Players.Player;
+
 public interface IHeal {
-    public String heal(String data);
+    public String heal(Player player);
+
 }

@@ -40,7 +40,16 @@ public class NonMagicalTest {
 
     @Test
     public void barbarianCanFight(){
-        barbarian.fight(barbarian.getWeaponValue());
+        assertEquals ( "I will fight with the Axe",barbarian.fight("Axe"));
         assertEquals ( 6000, barbarian.lifeCount ());
     }
+
+    @Test
+    public void barbarianCanSetAttackPower(){
+        assertEquals ( "I will fight with the Axe",barbarian.fight("Axe"));
+        assertEquals ( 6000, barbarian.lifeCount ());
+        assertEquals ( 6800,barbarian.setAttackPower (WeaponType.AXE));
+    }
+
+
 }

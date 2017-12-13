@@ -5,15 +5,17 @@ import Players.Player;
 public abstract class nonMagical extends Player {
 
     protected NonMagicalType nonMagicalType;
+    protected WeaponType weaponType;
 
-    public nonMagical(String name, int healthValue, NonMagicalType nonMagicalType) {
+    public nonMagical(String name, int healthValue, NonMagicalType nonMagicalType, WeaponType weaponType) {
         super (name, healthValue);
         this.nonMagicalType = nonMagicalType;
+        this.weaponType = weaponType;
     }
 
-    public NonMagicalType getNonMagicalType() {
+    public String getNonMagicalType() {
 
-        return nonMagicalType;
+        return nonMagicalType.getType ();
     }
 
     public void setNonMagicalType(NonMagicalType nonMagicalType) {
@@ -21,8 +23,20 @@ public abstract class nonMagical extends Player {
         this.nonMagicalType = nonMagicalType;
     }
 
-    public int lifeCount(){
-        return this.healthValue;
+    public WeaponType getWeaponType() {
+        return weaponType;
+    }
+
+    public int getWeaponValue(){
+        return weaponType.getValue ();
+    }
+
+    public void setWeaponType(WeaponType weaponType) {
+        this.weaponType = weaponType;
+    }
+
+    public int setAttackPower(WeaponType weaponType){
+        return weaponType.getValue ()+ healthValue;
     }
 
 

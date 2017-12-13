@@ -5,15 +5,15 @@ import Players.Player;
 
 public class WhiteMage extends Player implements IHeal {
 
-    protected int healportion;
+    protected int portion;
 
-    public WhiteMage(String name, int healthValue, int healportion) {
+    public WhiteMage(String name, int healthValue, int portion) {
         super (name, healthValue);
-        this.healportion = healportion;
+        this.portion = portion;
     }
 
-
     public String heal(String data) {
-        return null;
+
+        return "Heal power: " + this.portion;
     }
 }

@@ -1,9 +1,10 @@
 package Players.NonMagical;
 
+import Players.Player;
+
 public interface IFight {
 
-    public void fight(int data);
-
+    public String fight(Player player);
 
 
 }

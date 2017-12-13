@@ -2,16 +2,18 @@ package Players.Magical;
 
 public class Warlock extends Magical implements ICast{
 
-    protected CreatureType creatureType;
+
 
     public Warlock(String name, int healthValue, MagicalType magicalType, CreatureType creatureType) {
-        super (name, healthValue, magicalType);
-        this.creatureType = creatureType;
+        super (name, healthValue, magicalType, creatureType);
+
     }
 
 
-    public String cast(String data) {
-        return null;
+    public int cast(String creatureName) {
+        int cast = creatureType.getPower ()* 5;
+
+        return setAttackPower(creatureType) + cast;
     }
 
     public CreatureType getCreatureType() {
@@ -20,5 +22,10 @@ public class Warlock extends Magical implements ICast{
 
     public void setCreatureType(CreatureType creatureType) {
         this.creatureType = creatureType;
+    }
+
+    public int setAttackPower(CreatureType creatureType){
+
+        return creatureType.getPower ()+ healthValue;
     }
 }

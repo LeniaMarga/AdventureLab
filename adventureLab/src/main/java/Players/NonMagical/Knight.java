@@ -1,17 +1,20 @@
 package Players.NonMagical;
 
+import Players.Player;
+
 public class Knight extends nonMagical implements IFight {
 
-    protected WeaponType weaponType;
 
     public Knight(String name, int healthValue, NonMagicalType nonMagicalType, WeaponType weaponType) {
-        super (name, healthValue, nonMagicalType);
-        this.weaponType = weaponType;
+        super (name, healthValue, nonMagicalType, weaponType);
+
     }
 
-    public String fight(String data) {
-        return null;
+    public String fight(Player player){
+
+        return "Attack" + player.getName();
     }
+
 
     public WeaponType getWeaponType() {
         return weaponType;
